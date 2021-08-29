@@ -1,25 +1,26 @@
 import React from "react";
 import "./App.css";
 
-const Card = (props) => {
+function Card ({cards,onChangeInput,btn})  {
   
   return (
-    <div>
-      <div className="card">
-        <img src={props.img} alt="Avatar" style={{ width: "100%" }}></img>
+    <div className = "cards">
+      {cards.map(card => (
+        <div className="card">
         <div className="container">
           <h4>
-            <b>{props.name}</b>
+            <b>{card.name}</b>
           </h4>
           <input
             type="text"
-            onChange={props.onChangeInput}
-            value={props.name}
+            onChange={onChangeInput}
+            value={card.name}
           ></input>
-          <p>{props.title}</p>
-          <p>{props.children}</p>
+          <p>{card.email}</p>
+          <p>{btn}</p>
         </div>
       </div>
+      ))}
     </div>
   );
 };
