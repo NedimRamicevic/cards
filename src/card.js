@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-function Card ({cards,onChangeInput,btn})  {
+function Card ({cards,onChangeInput,onDelete})  {
   
   return (
     <div className = "cards">
@@ -14,10 +14,14 @@ function Card ({cards,onChangeInput,btn})  {
           <input
             type="text"
             onChange={onChangeInput}
-            value={card.name}
+            defaultValue = {card.name}
           ></input>
           <p>{card.email}</p>
-          <p>{btn}</p>
+          <div className="btn">
+      <button className="btnYes" onClick={() => onDelete(card.name)}>
+        Delete
+      </button>
+    </div>
         </div>
       </div>
       ))}
