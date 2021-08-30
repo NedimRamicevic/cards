@@ -1,14 +1,17 @@
-import React,{useReducer} from 'react'
+import React,{useReducer,useEffect} from 'react'
 
 const reducer = (state,action) =>{
     if (action.type === "inc") {
       return state + 1
     }
   }
+const reducer1 = () =>(console.log("naber"))
 const init = 0
 const Card = ({card,onChangeInput,onDelete}) => {
+    var initialState = card
     const [count, dispatch] = useReducer(reducer, init)
- 
+    const [state, dispatch1] = useReducer(reducer1, card)
+
     return (
         <div className="card">
         <div className="container">
@@ -18,7 +21,7 @@ const Card = ({card,onChangeInput,onDelete}) => {
           <input
             type="text"
             onChange={onChangeInput}
-            defaultValue = {card.name}
+            defaultValue = {initialState.name}
           ></input>
           <p>{card.email}</p>
           <div className="btn">
