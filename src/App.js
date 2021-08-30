@@ -1,10 +1,12 @@
 import './App.css';
-import {useState, useEffect} from 'react'
-import Card from "./card";
+import {useState, useEffect, useReducer} from 'react'
+import Cards from "./cards";
 import faker from "faker";
 
+
+
+
 function App() {
-  
   const [cards, setCards] = useState([])
   const [showCard, setShowCard] = useState(true);
   const showCardFun = () => {
@@ -18,9 +20,10 @@ function App() {
       console.log(json)
       setCards(json)
     })
-        
-    
   }, [])
+  
+
+
   const chaneInput = ({target}) => {
     var temp = cards
     for (const card in temp) {
@@ -33,12 +36,16 @@ function App() {
     }
     setCards([...temp])
   }
+
+
   const onDelete = (name) =>{
     console.log(name)
     setCards(prev =>(
       prev.filter(x => x.name !== name)
     ))
   }
+
+ 
  
   return (
     <div className="App">
@@ -46,7 +53,7 @@ function App() {
         Show Card
       </button>
       {showCard ? (
-        <Card cards = {cards} onDelete={onDelete}  onChangeInput={chaneInput} />
+        <Cards cards = {cards} onDelete={onDelete}  onChangeInput={chaneInput} />
       ) : null}
       {/* <Card
         name={`${faker.name.firstName()} ${faker.name.lastName()}`}

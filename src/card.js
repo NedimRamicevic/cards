@@ -1,11 +1,15 @@
-import React from "react";
-import "./App.css";
+import React,{useReducer,useEffect} from 'react'
 
-function Card ({cards,onChangeInput,onDelete})  {
-  
-  return (
-    <div className = "cards">
-      {cards.map(card => (
+const reducer = (state,action) =>{
+    if (action.type === "inc") {
+      return state + 1
+    }
+  }
+const init = 0
+const Card = ({card,onChangeInput,onDelete}) => {
+    const [count, dispatch] = useReducer(reducer, init)
+ 
+    return (
         <div className="card">
         <div className="container">
           <h4>
@@ -21,12 +25,12 @@ function Card ({cards,onChangeInput,onDelete})  {
       <button className="btnYes" onClick={() => onDelete(card.name)}>
         Delete
       </button>
+      <button onClick={()=>dispatch({type : "inc", name: card.name})}>Reducer</button>
+      <p>{count}</p>
     </div>
         </div>
       </div>
-      ))}
-    </div>
-  );
-};
+    )
+}
 
-export default Card;
+export default Card
