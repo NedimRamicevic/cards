@@ -10,7 +10,7 @@ const reducer1 = (state,name) =>{
 }
 const init = 0
 const Card = ({card,onChangeInput,onDelete}) => {
-    var initialState = card
+    
     const [count, dispatch] = useReducer(reducer, init)
     const [state, dispatch1] = useReducer(reducer1, card)
 
@@ -23,7 +23,7 @@ const Card = ({card,onChangeInput,onDelete}) => {
           <input
             type="text"
             onChange={onChangeInput}
-            defaultValue = {initialState.name}
+            defaultValue = {state.name}
           ></input>
           <p>{card.email}</p>
           <div className="btn">
