@@ -5,7 +5,9 @@ const reducer = (state,action) =>{
       return state + 1
     }
   }
-const reducer1 = () =>(console.log("naber"))
+const reducer1 = (state,name) =>{
+    return {...state, name: "naber"}
+}
 const init = 0
 const Card = ({card,onChangeInput,onDelete}) => {
     var initialState = card
@@ -16,7 +18,7 @@ const Card = ({card,onChangeInput,onDelete}) => {
         <div className="card">
         <div className="container">
           <h4>
-            <b>{card.name}</b>
+            <b>{state.name}</b>
           </h4>
           <input
             type="text"
@@ -28,6 +30,7 @@ const Card = ({card,onChangeInput,onDelete}) => {
       <button className="btnYes" onClick={() => onDelete(card.name)}>
         Delete
       </button>
+      <button onClick= {()=>dispatch1(card.name)}>dispatch</button>
       <button onClick={()=>dispatch({type : "inc", name: card.name})}>Reducer</button>
       <p>{count}</p>
     </div>
