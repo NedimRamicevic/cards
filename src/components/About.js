@@ -4,7 +4,7 @@ import faker from 'faker'
 const About = () => {
     return (
         <div className="container">
-            <h4 className="center">Home</h4>
+            <h4 className="center">About</h4>
             <p>{faker.lorem.paragraph()}</p>
         </div>
     )
