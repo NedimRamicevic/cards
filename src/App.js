@@ -16,10 +16,13 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        <Switch>
         <Route exact path="/" component={Home} />
         <ProtectedRoute path="/cards"  component = {CardApp} />
         <ProtectedRoute path="/about" component = {About} />
         <ProtectedRoute path="/posts/:post_id" component = {Contact} />
+        <Route path="*" component={()=>"404 NOT FOUND"} />
+        </Switch >
     </div>
     </Router>
   );
