@@ -1,7 +1,12 @@
 import './App.css';
-import {useState, useEffect, useReducer} from 'react'
+import {useState, useEffect} from 'react'
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
 import Cards from "./cards";
-import faker from "faker";
+import Contact from './components/Contact'
+import Home from './components/Home'
+import About from './components/About'
+import Navbar from './components/Navbar'
 
 
 
@@ -48,8 +53,13 @@ function App() {
  
  
   return (
-    <div className="App">
-      <button className="btnNo" onClick={showCardFun}>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Route path="/" component = {Home} />
+        <Route path="/about" component = {About} />
+        <Route path="/contact" component = {Contact} />
+      {/* <button className="btnNo" onClick={showCardFun}>
         Show Card
       </button>
       {showCard ? (
@@ -63,6 +73,7 @@ function App() {
         {btns}
       </Card> */}
     </div>
+    </Router>
   );
 }
 
