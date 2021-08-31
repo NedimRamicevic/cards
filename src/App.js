@@ -18,7 +18,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/cards"  component = {CardApp} />
         <Route path="/about" component = {About} />
-        <Route path="/contact" component = {Contact} />
+        <Route path="/posts/:post_id" component = {Contact} />
     </div>
     </Router>
   );

@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import Card from '../card'
 
 const Home = () => {
@@ -15,7 +16,9 @@ const Home = () => {
             {posts ? posts.map(post =>(
                 <div class="card col px-2 bg-white rounded" style={{backgroundColor: "#eee"}}>
                 <div class="card-body shadow">
-                  <h5 class="card-title">{post.title}</h5>
+                  <Link to={`/posts/${post.id}`}> 
+                    <h5 class="card-title">{post.title}</h5>
+                  </Link>
                   <p class="card-text">{post.body}</p>
                 </div>
                 </div>
