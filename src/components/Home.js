@@ -11,9 +11,9 @@ const Home = () => {
     return (
         <div className="container ">
             <h4 className="center ">Home</h4>
-            <div className="row row-cols-3">
+            <div className="row row-cols-2">
             {posts ? posts.map(post =>(
-                <div class="card col" style={{backgroundColor: "#eee"}}>
+                <div class="card col px-2 bg-white rounded" style={{backgroundColor: "#eee"}}>
                 <div class="card-body shadow">
                   <h5 class="card-title">{post.title}</h5>
                   <p class="card-text">{post.body}</p>
