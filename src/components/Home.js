@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import Card from '../card'
 
 const Home = () => {
     const [posts, setPosts] = useState()
@@ -21,6 +22,7 @@ const Home = () => {
             ) ):null}
             </div>
         </div>
+        
     )
 }
 
