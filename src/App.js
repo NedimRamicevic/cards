@@ -24,6 +24,7 @@ function App() {
 
 
   const chaneInput = ({target}) => {
+    console.log("nabers")
     var temp = cards
     for (const card in temp) {
       if (Object.hasOwnProperty.call(temp, card)) {

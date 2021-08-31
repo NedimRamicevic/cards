@@ -9,11 +9,11 @@ const reducer1 = (state,name) =>{
     return {...state, name: "naber"}
 }
 const init = 0
+
 const Card = ({card,onChangeInput,onDelete}) => {
-    
+
     const [count, dispatch] = useReducer(reducer, init)
     const [state, dispatch1] = useReducer(reducer1, card)
-
     return (
         <div className="card">
         <div className="container">
