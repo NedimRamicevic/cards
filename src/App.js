@@ -5,6 +5,7 @@ import CardApp from './components/CardApp'
 import About from './components/About'
 import Navbar from './components/Navbar'
 import Home from './components/Home';
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 
@@ -15,10 +16,10 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Route path="/home" component={Home} />
-        <Route path="/cards"  component = {CardApp} />
-        <Route path="/about" component = {About} />
-        <Route path="/posts/:post_id" component = {Contact} />
+        <Route exact path="/" component={Home} />
+        <ProtectedRoute path="/cards"  component = {CardApp} />
+        <ProtectedRoute path="/about" component = {About} />
+        <ProtectedRoute path="/posts/:post_id" component = {Contact} />
     </div>
     </Router>
   );

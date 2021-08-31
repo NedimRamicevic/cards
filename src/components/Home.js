@@ -14,12 +14,12 @@ const Home = () => {
             <h4 className="center ">Home</h4>
             <div className="row row-cols-2">
             {posts ? posts.map(post =>(
-                <div class="card col px-2 bg-white rounded" style={{backgroundColor: "#eee"}}>
-                <div class="card-body shadow">
+                <div className="card col px-2 bg-white rounded" style={{backgroundColor: "#eee"}}>
+                <div className="card-body shadow">
                   <Link to={`/posts/${post.id}`}> 
-                    <h5 class="card-title">{post.title}</h5>
+                    <h5 className="card-title">{post.title}</h5>
                   </Link>
-                  <p class="card-text">{post.body}</p>
+                  <p className="card-text">{post.body}</p>
                 </div>
                 </div>
             ) ):null}
