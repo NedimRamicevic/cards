@@ -17,8 +17,8 @@ const Card = ({card,onChangeInput,onDelete}) => {
     const [state, dispatch1] = useReducer(reducer1, card)
 
     return (
-        <div className="card">
-        <div className="container">
+      <div className="container">
+          <div className="card col "style={{backgroundColor: "#eee"}} >
           <h4>
             <b>{card.name}</b>
           </h4>
@@ -37,6 +37,7 @@ const Card = ({card,onChangeInput,onDelete}) => {
       <p>{count}</p>
     </div>
         </div>
+        
       </div>
     )
 }
