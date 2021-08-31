@@ -18,7 +18,7 @@ const Contact = (props) => {
             {post ? 
             <div class="card-body shadow">                 
             <h5 class="card-title">{post.title}</h5>
-          <p class="card-text">{post.body}</p>
+            <p class="card-text">{post.body}</p>
         </div>:null}
         </div>
     )
