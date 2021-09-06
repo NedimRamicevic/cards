@@ -27,7 +27,7 @@ const Navbar = (props) => {
       <div className="nav nav-tabs">
         <NavLink className="nav-link" aria-current="page" to="/cards">Cards</NavLink>
         <NavLink className="nav-link" to="/about">About</NavLink>
-        {/* <NavLink className="nav-link" to="/contact">Contact</NavLink> */}
+        <NavLink className="nav-link" to="/profile/nedim">Profiles</NavLink>
         <button onClick= {handler}>{changeText}</button>
       </div>
 

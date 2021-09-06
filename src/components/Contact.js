@@ -1,11 +1,13 @@
 import React,{useEffect,useState} from 'react'
+import {useRouteMatch} from 'react-router-dom'
 
-const Contact = (props) => {
-    const postId = props.match.params.post_id
+const Contact = () => {
+    let match = useRouteMatch('/posts/:id')
+    console.log('ben buyums', match)
     const [post, setPost] = useState()
     useEffect(() => {
         async function fetchPostJSON() {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+            const response = await fetch(`https://jsonplaceholder.typicode.com${match.url}`);
             const movies = await response.json();
             return movies;
           }

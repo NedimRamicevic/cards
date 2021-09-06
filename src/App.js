@@ -4,7 +4,8 @@ import Contact from './components/Contact'
 import CardApp from './components/CardApp'
 import About from './components/About'
 import Navbar from './components/Navbar'
-import Home from './components/Home';
+import Home from './components/Home'
+import Profiles from './components/Profiles'
 import ProtectedRoute from './components/ProtectedRoute'
 
 
@@ -21,6 +22,7 @@ function App() {
         <ProtectedRoute path="/cards"  component = {CardApp} />
         <ProtectedRoute path="/about" component = {About} />
         <ProtectedRoute path="/posts/:post_id" component = {Contact} />
+        <ProtectedRoute path="/profile" component = {Profiles} />
         <Route path="*" component={()=>"404 NOT FOUND"} />
         </Switch >
     </div>
